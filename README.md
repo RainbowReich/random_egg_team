@@ -6,5 +6,5 @@ This script requires the ruby\_gs and rest-client gems to function.
 
 ###Usage
 ```
-$ ruby random_team_eggs.rb /path/to/save/file.sav
+$ ruby random_team_eggs.rb /path/to/save/file.sav /path/to/rom/file.gbc
 ```
