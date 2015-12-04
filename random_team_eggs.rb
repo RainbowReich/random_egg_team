@@ -37,4 +37,4 @@ save = RubyGS::SaveFileReader.read ARGV[0]
 end
 
 save.write
-`vbam /home/reich/silver.gbc`
+`vbam #{ARGV[0]}`
