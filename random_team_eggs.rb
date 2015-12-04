@@ -21,7 +21,13 @@ save = RubyGS::SaveFileReader.read ARGV[0]
   rand_species = rand 251
   save.set_team_species i, rand_species
   poke = JSON.parse(RestClient.get "http://pokeapi.co/api/v1/pokemon/#{rand_species}/")
-  save.team.name[i] = poke["name"].upcase
+
+  if i > 0 then
+    save.team.name[i] = "RANDOM EGG" 
+    save.set_team_egg i 
+  else
+    save.team.name[i] = poke["name"]
+  end
 
   new_moves = choose_random_moves(poke)
 
@@ -32,7 +38,6 @@ save = RubyGS::SaveFileReader.read ARGV[0]
  
   save.team.pokemon[i].exp = 156
   save.team.pokemon[i].level = 5
-  save.set_team_egg i if i > 0
 
 end
 
