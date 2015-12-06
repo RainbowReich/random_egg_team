@@ -24,7 +24,8 @@ save = RubyGS::SaveFileReader.read ARGV[0]
 
   if i > 0 then
     save.team.name[i] = "RANDOM EGG" 
-    save.set_team_egg i 
+    save.set_team_egg i, 10 * i
+	save.pokemon[i].current_hp = 0
   else
     save.team.name[i] = poke["name"]
   end
@@ -42,4 +43,4 @@ save = RubyGS::SaveFileReader.read ARGV[0]
 end
 
 save.write
-`vbam #{ARGV[1]}`
+`vba #{ARGV[1]}`
